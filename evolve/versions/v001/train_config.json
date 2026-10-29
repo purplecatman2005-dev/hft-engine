@@ -1,0 +1,14 @@
+{
+  "trees": 400,
+  "leaves": 15,
+  "lr": 0.03,
+  "min_data_in_leaf": 200,
+  "bagging_fraction": 0.8,
+  "feature_fraction": 1.0,
+  "fire_pct": 97.0,
+  "use_synthetic": true,
+  "use_live": false,
+  "live_weight": 3.0,
+  "feature_subset": null,
+  "note": "v001: 現行ml_model.hpp(合成seed42-46学習)のコピー。この設定は起点の参考値"
+}

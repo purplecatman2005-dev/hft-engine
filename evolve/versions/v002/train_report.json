@@ -1,0 +1,81 @@
+{
+  "version": "v002",
+  "rows_train": 245891,
+  "rows_valid": 61473,
+  "sources": [
+    "synthetic:ml_features.csv(61221)",
+    "synthetic:ml_features_s43.csv(61221)",
+    "synthetic:ml_features_s44.csv(61221)",
+    "synthetic:ml_features_s45.csv(61221)",
+    "synthetic:ml_features_s46.csv(61221)",
+    "live:live_features_20260719_183527.csv(590)",
+    "live:live_features_20260719_214212.csv(669)"
+  ],
+  "config": {
+    "trees": 400,
+    "leaves": 15,
+    "lr": 0.03,
+    "min_data_in_leaf": 200,
+    "bagging_fraction": 0.8,
+    "feature_fraction": 1.0,
+    "fire_pct": 97.0,
+    "use_synthetic": true,
+    "use_live": true,
+    "live_weight": 8.0,
+    "feature_subset": null
+  },
+  "valid_corr": 0.16568767392258685,
+  "valid_dir_acc": 0.9689988775455664,
+  "fire_threshold": 1.4915867210152038,
+  "fired_dir_acc": 0.7508250825082509,
+  "feature_importance_gain": [
+    [
+      "ret128",
+      426427.7
+    ],
+    [
+      "micro_prem",
+      257566.6
+    ],
+    [
+      "ofi_z256",
+      182062.2
+    ],
+    [
+      "imbalance",
+      164891.8
+    ],
+    [
+      "ret32",
+      26069.1
+    ],
+    [
+      "rvol64",
+      12241.0
+    ],
+    [
+      "spread_dev64",
+      10178.1
+    ],
+    [
+      "ofi_z64",
+      9327.9
+    ],
+    [
+      "ret8",
+      5155.0
+    ],
+    [
+      "ofi_z16",
+      2577.2
+    ],
+    [
+      "spread",
+      230.4
+    ],
+    [
+      "micro_prem_rel",
+      0.0
+    ]
+  ]
+}

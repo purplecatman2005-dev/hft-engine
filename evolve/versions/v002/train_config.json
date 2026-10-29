@@ -1,0 +1,14 @@
+{
+  "trees": 400,
+  "leaves": 15,
+  "lr": 0.03,
+  "min_data_in_leaf": 200,
+  "bagging_fraction": 0.8,
+  "feature_fraction": 1.0,
+  "fire_pct": 97.0,
+  "use_synthetic": true,
+  "use_live": true,
+  "live_weight": 8.0,
+  "feature_subset": null,
+  "note": "v002: 合成seed42-46学習にライブ実測(1259行)をuse_live=trueで併用開始、live_weight 3→8で評価ドメイン整合を強化。容量・正則化・fire_pctはv001据え置きにして『ライブ投入』の因果を切り分ける。net_bpsは手数料壁が構造要因のため対象外、目標はcorr/dir_accの底上げ。"
+}
