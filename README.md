@@ -2,6 +2,26 @@
 
 板情報の高速管理・シグナル検出・性能計測を行うHFT学習/基盤プロジェクト。
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/latency-dark.png">
+  <img alt="板更新レイテンシの分位点" src="docs/latency-light.png" width="560">
+</picture>
+
+```
+=== HFT order book engine bench ===            (bench.exe 1000000)
+throughput : 12.49 M msgs/sec
+latency/msg: p50 38 ns | p90 52 ns | p99 68 ns | p99.9 465 ns
+-- integrity check vs std::map reference --
+PASS (11 checkpoints)
+-- 2-thread (feed -> SPSC queue -> strategy) --
+processed  : 1000030 msgs, 9.48 M msgs/sec end-to-end
+```
+
+- 計測環境: Windows 11 / MinGW-w64 g++ 15.2 / TSC 2.69 GHz。`-march=native` でビルドするため数値は CPU に依存します
+- 高速化だけでなく、`std::map` による素朴な参照実装と最良気配を突き合わせて**正しさも毎回検証**しています
+- GBDT(`build_ml.bat` → `backtest_ml.exe`、学習と別seedの合成フィード)では平均獲得 +0.690 ticks/signal と、
+  往復コストの目安(spread/2 = 0.501)を上回りました。z-score ルールは +0.027 で下回ります。**いずれも合成フィード上の結果で、実市場の利益を示すものではありません**
+
 ## ビルドと実行
 
 ```bat
